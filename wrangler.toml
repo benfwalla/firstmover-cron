@@ -8,3 +8,8 @@ crons = ["*/2 * * * *"] # Every 2 minutes
 [observability]
 enabled = true
 
+[vars]
+# Optional default vars, NOT for secrets
+
+[[kv_namespaces]]
+# If you use KV, add here
