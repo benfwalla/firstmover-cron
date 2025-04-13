@@ -7,3 +7,4 @@ crons = ["*/2 * * * *"] # Every 2 minutes
 
 [observability]
 enabled = true
+
