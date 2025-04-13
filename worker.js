@@ -3,7 +3,14 @@ export default {
     const url = 'https://firstmover-fast-api.vercel.app/insertListings?perPage=10';
 
     try {
-      const res = await fetch(url, { method: 'GET' });
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${env.API_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ source: "cloudflare-cron" })
+      });
 
       const text = await res.text();
       console.log(`Success: ${res.status} ${res.statusText}`);
